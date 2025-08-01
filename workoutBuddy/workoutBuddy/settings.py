@@ -24,6 +24,10 @@ ALLOWED_HOSTS = [
     '.onrender.com',  # Allow all Render subdomains (backend & frontend)
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://workoutbuddy-frontend-r4f7.onrender.com",
+]
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
