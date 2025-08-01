@@ -1,7 +1,6 @@
 import requests
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.views.decorators.csrf import csrf_exempt  # only for development
 from .forms import CreateWorkoutForm
 from django.http import JsonResponse
 from django.conf import settings

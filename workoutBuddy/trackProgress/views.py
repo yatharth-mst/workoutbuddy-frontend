@@ -2,14 +2,12 @@ import requests
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.utils import timezone
-from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 import json
 
 FASTAPI_BASE_URL = settings.FASTAPI_BASE_URL
 
 
-@csrf_exempt
 def workout_log(request):
     token = request.session.get("token")
     if not token:

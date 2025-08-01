@@ -5,7 +5,6 @@ from .forms import RegisterForm, LoginForm, ProfileForm
 from datetime import datetime
 from django.http import JsonResponse
 import json
-from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 
 FASTAPI_BASE_URL = settings.FASTAPI_BASE_URL
@@ -39,7 +38,7 @@ def register_view(request):
     return render(request, 'login-signup.html', {'form': form, 'show_signup': True})
 
 
-@csrf_exempt
+
 def verify_otp(request):
     email = request.GET.get("email") or request.POST.get("email")
     if not email:
@@ -72,7 +71,7 @@ def verify_otp(request):
     # Initial GET request to show form
     return render(request, "verify.html", {"email": email})
 
-@csrf_exempt
+
 def resend_otp(request):
     email = request.POST.get("email") or request.GET.get("email")
 
